@@ -83,8 +83,8 @@ if config_env() == :prod do
 end
 
 config :codeslack, api_key: "bTrpCz8o/xzeQ5McSs7SrbPlZ40fGUjEIMiyAkF5bcv59lJ91o4hb96p8gnJ7ZFL"
-config :codeslack, bot_token: "xxxxxxxxxxxxx"
-config :codeslack, user_token: "xxxxxxxxxx"
-config :codeslack, channel_id: "xxxxxxx"
-config :codeslack, slack_webhook: "xxxxxxxx"
-config :codeslack, slack_api_url: "xxxxxxxxx"
+config :codeslack, bot_token: "xoxb-300606798083-4643826703249-tNy7ptXW994m8Tac6G5sfmkI"
+config :codeslack, user_token: "xoxp-300606798083-301765785719-4645108377153-92fa0d488c0cf00e418d8a1f9cd3f83e"
+config :codeslack, channel_id: "C04JK5JF0MQ"
+config :codeslack, slack_webhook: "https://hooks.slack.com/services/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"
+config :codeslack, slack_api_url: "https://slack.com/api"

@@ -59,10 +59,3 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-config :codeslack, api_key: "bTrpCz8o/xzeQ5McSs7SrbPlZ40fGUjEIMiyAkF5bcv59lJ91o4hb96p8gnJ7ZFL"
-config :codeslack, bot_token: "xxxxxxxxxxxxx"
-config :codeslack, user_token: "xxxxxxxxxx"
-config :codeslack, channel_id: "xxxxxxx"
-config :codeslack, slack_webhook: "xxxxxxxx"
-config :codeslack, slack_api_url: "xxxxxxxxx"
