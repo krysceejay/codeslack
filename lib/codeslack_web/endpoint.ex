@@ -45,4 +45,5 @@ defmodule CodeslackWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug CodeslackWeb.Router
+  plug CORSPlug, origin: "*"
 end

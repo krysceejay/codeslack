@@ -2,7 +2,6 @@ defmodule CodeslackWeb.Router do
   use CodeslackWeb, :router
 
   pipeline :api do
-    plug CORSPlug, origin: "*"
     plug :accepts, ["json"]
     plug CodeslackWeb.Plugs.ApiKey
   end
