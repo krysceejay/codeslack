@@ -11,7 +11,7 @@ defmodule Codeslack.Slack do
   def get() do
     HTTPoison.get!(
       "#{Application.get_env(:codeslack, :slack_api_url)}/conversations.history?channel=#{Application.get_env(:codeslack, :channel_id)}",
-      [{"Content-Type", "application/json"}, "Authorization": "Bearer #{Application.get_env(:codeslack, :user_token)}"]
+      [{"Content-Type", "application/json"}, authorization: "Bearer #{Application.get_env(:codeslack, :user_token)}"]
     )
   end
 
@@ -19,7 +19,7 @@ defmodule Codeslack.Slack do
     HTTPoison.post(
       "#{Application.get_env(:codeslack, :slack_api_url)}/chat.delete",
       '{"channel": "#{Application.get_env(:codeslack, :channel_id)}", "ts": "#{message}"}',
-      [{"Content-Type", "application/json"}, "Authorization": "Bearer #{Application.get_env(:codeslack, :user_token)}"]
+      [{"Content-Type", "application/json"}, authorization: "Bearer #{Application.get_env(:codeslack, :user_token)}"]
     )
   end
 end

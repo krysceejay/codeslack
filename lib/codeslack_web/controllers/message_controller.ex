@@ -29,7 +29,8 @@ defmodule CodeslackWeb.MessageController do
   def update(conn, %{"id" => id, "message" => message_params}) do
     message = Content.get_message!(id)
 
-    with {:ok, %Message{} = message} <- Content.update_message(message, message_params) do
+    with {:ok, %Message{} = message} <- Content.update_message(message, message_params),
+      _ <- Slack.send("Subject: #{message.subject} \nMessage: #{message.body}") do
       render(conn, "show.json", message: message)
     end
   end
@@ -44,7 +45,7 @@ defmodule CodeslackWeb.MessageController do
 
     with {:ok, %Message{}} <- Content.delete_message(message),
       _ <- Slack.delete(msg_in_slack["ts"]) do
-      send_resp(conn, 204, "Message was deleted successfully")
+      send_resp(conn, 204, "")
     end
   end
 end

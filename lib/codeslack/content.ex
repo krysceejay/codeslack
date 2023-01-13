@@ -18,7 +18,10 @@ defmodule Codeslack.Content do
 
   """
   def list_messages do
-    Repo.all(Message)
+    Repo.all(
+      from m in Message,
+        order_by: [desc: m.id]
+    )
   end
 
   @doc """

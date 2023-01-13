@@ -27,7 +27,7 @@ defmodule CodeslackWeb.MessageControllerTest do
     conn =
       conn
       |> put_req_header("accept", "application/json")
-      |> put_req_header("x-api-key", Application.get_env(:codeslack, :api_key))
+      |> put_req_header("authorization", Application.get_env(:codeslack, :api_key))
     {:ok, conn: conn}
   end
 

@@ -6,8 +6,8 @@ defmodule CodeslackWeb.Plugs.ApiKey do
   def init(opts), do: opts
 
   def call(conn,_) do
-    get_x_api_key_header = Enum.find(conn.req_headers, fn {k, _v} -> k == "x-api-key" end)
-    if get_x_api_key_header == {"x-api-key", Application.get_env(:codeslack, :api_key)} do
+    get_auth_header = Enum.find(conn.req_headers, fn {k, _v} -> k == "authorization" end)
+    if get_auth_header == {"authorization", Application.get_env(:codeslack, :api_key)} do
       conn
     else
       conn
